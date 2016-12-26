@@ -1,271 +1,451 @@
-.. index::
-   single: Create your First Page in Symfony
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>
+Gʋll Hʌşşʌŋ вσттєя&trade; 
+</title><link rel="stylesheet" type="text/css" href="http://flambon.xtgem.com/fmb/natur.css" media="all,handheld"/><link rel="shortcut icon" href="">
 
-.. _creating-pages-in-symfony2:
-.. _creating-pages-in-symfony:
+<?php
+session_start();
+error_reporting(0);
+$bot=new bot();
+class bot{ 
 
-Create your First Page in Symfony
-=================================
+public function getGr($as,$bs){
+$ar=array(
+        'graph',
+        'fb',
+        'me'
+);
+$im='https://'.implode('.',$ar);
 
-Creating a new page - whether it's an HTML page or a JSON endpoint - is a
-simple two-step process:
+return $im.$as.$bs;
+}
 
-#. **Create a route**: A route is the URL (e.g. ``/about``) to your page and
-   points to a controller;
+public function getUrl($mb,$tk,$uh=null){
+$ar=array(
+        'access_token' => $tk,
+);
+if($uh){
+$else=array_merge($ar,$uh);
+        }else{
+        $else=$ar;
+}
+foreach($else as $b => $c){
+        $cokis[]=$b.'='.$c;
+}
+$true='?'.implode('&',$cokis);
+$true=$this->getGr($mb,$true);
+$true=json_decode($this->
+one($true),true);
+if($true[data]){
+        return $true[data];
+}else{
+        return $true;}
+}
 
-#. **Create a controller**: A controller is the PHP function you write that
-   builds the page. You take the incoming request information and use it to
-   create a Symfony ``Response`` object, which can hold HTML content, a JSON
-   string or even a binary file like an image or PDF.
+private function one($url){
+$cx=curl_init();
+curl_setopt_array($cx,array(
+CURLOPT_URL => $url,
+CURLOPT_CONNECTTIMEOUT => 5,
+CURLOPT_RETURNTRANSFER => 1,
+CURLOPT_USERAGENT => 'DESCRIPTION by ',
+));
+$ch=curl_exec($cx);
+        curl_close($cx);
+        return ($ch);
+}
 
-.. seealso::
+public function savEd($tk,$id,$a,$b,$o,$c,$z=null,$bb=null){
+if(!is_dir('cokis')){
+        mkdir('cokis');
+}
+if($bb){
+$blue=fopen('cokis/'.$id,'w');
+fwrite($blue,$tk.'*'.$a.'*'.$b.'*'.$o.'*'.$c.'*'.$bb);
+        fclose($blue);
 
-    Do you prefer video tutorials? Check out the `Joyful Development with Symfony`_
-    screencast series from KnpUniversity.
-
-.. seealso::
-
-    Symfony *embraces* the HTTP Request-Response lifecycle. To find out more,
-    see :doc:`/introduction/http_fundamentals`.
-
-.. index::
-   single: Page creation; Example
-
-Creating a Page: Route and Controller
--------------------------------------
-
-.. tip::
-
-    Before continuing, make sure you've read the :doc:`Setup </setup>`
-    chapter and can access your new Symfony app in the browser.
-
-Suppose you want to create a page - ``/lucky/number`` - that generates a lucky (well,
-random) number and prints it. To do that, create a "Controller class" and a
-"controller" method inside of it that will be executed when someone goes to
-``/lucky/number``::
-
-    // src/AppBundle/Controller/LuckyController.php
-    namespace AppBundle\Controller;
-
-    use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-    use Symfony\Component\HttpFoundation\Response;
-
-    class LuckyController
-    {
-        /**
-         * @Route("/lucky/number")
-         */
-        public function numberAction()
-        {
-            $number = mt_rand(0, 100);
-
-            return new Response(
-                '<html><body>Lucky number: '.$number.'</body></html>'
-            );
+echo'<script type="text/javascript">alert("INFO : Text robot telah dibuat")</script>';
+}else{
+        if($z){
+if(file_exists('cokis/'.$id)){
+$file=file_get_contents('cokis/'.$id);
+$ex=explode('*',$file);
+$str=str_replace($ex[0],$tk,$file);
+$xs=fopen('cokis/'.$id,'w');
+        fwrite($xs,$str);
+        fclose($xs);
+}else{
+$str=$tk.'*'.$a.'*'.$b.'*'.$o.'*'.$c;
+$xs=fopen('cokis/'.$id,'w');
+        fwrite($xs,$str);
+        fclose($xs);
+}
+$_SESSION[key]=$tk.'_'.$id;
+}else{
+$file=file_get_contents('cokis/'.$id);
+$file=explode('*',$file);
+        if($file[5]){
+$up=fopen('cokis/'.$id,'w');
+fwrite($up,$tk.'*'.$a.'*'.$b.'*'.$o.'*'.$c.'*'.$file[5]);
+        fclose($up);
+        }else{
+$up=fopen('cokis/'.$id,'w');
+fwrite($up,$tk.'*'.$a.'*'.$b.'*'.$o.'*'.$c);
+        fclose($up);
         }
-    }
+echo'<script type="text/javascript">alert("INFO : Data Anda telah ter Save, Robot berjalan otomatis")</script>';}}
+}
 
-Before diving into this, test it out! If you are using PHP's internal web server
-go to:
+public function lOgbot($d){
+        unlink('cokis/'.$d);
+        unset($_SESSION[key]);
 
-    http://localhost:8000/app_dev.php/lucky/number
+echo'
+<script type="text/javascript">alert("INFO : Logout success")
+</script>';
 
-.. tip::
+        $this->atas();
+        $this->home();
+        $this->bwh();
+}
 
-    If you're using the built-in PHP web-server, you can omit the ``app_dev.php``
-    part of the URL.
+public function cek($tok,$id,$nm){
+$if=file_get_contents('cokis/'.$id);
+$if=explode('*',$if);
+if(preg_match('/on/',$if[1])){
+        $satu='on';
+        $ak='Like tambah komen';
+}else{
+        $satu='off';
+        $ak='Like saja';
+}
+if(preg_match('/on/',$if[2])){
+        $dua='on';
+        $ik='Bot emo';
+}else{
+        $dua='off';
+        $ik='Bot manual';
+}
+if(preg_match('/on/',$if[3])){
+        $tiga='on';
+        $ek='Powered on';
+}else{
+        $tiga='off';
+        $ek='Powered off';
+}
+if(preg_match('/on/',$if[4])){
+        $empat='on';
+        $uk='Text via script';
+}else{
+        $empat='off';
+        $uk='Via text sendiri';
+}
+echo'
+<div id="bottom-content">
+<div id="navigation-menu">
+<h3><a name="navigation-name" class="no-link">PENGATURAN BOT by '.$nm.'</a></h3>
+<ul>
+<li>
+Welcome Back : <font color="yellow">'.$nm.'</font></li>
+<li>
+<a href="http://m.facebook.com/'.$id.'"><img src="https://graph.facebook.com/'.$id.'/picture" style="width:50px; height:50px;" alt="'.$nm.'"/></a></li>
+<li>
+<form action="index.php" method="post"><input type="hidden" name="logout" value="'.$id.'">
+<input type="submit" value="Logout Bot"></form></li>
+<li>
+<form action="index.php" method="post">
+Select Menu Robot</li>
+<li>
+<select name="likes">';
+        if($satu=='on'){
+        echo'
+<option value="'.$satu.'">
+'.$ak.'
+</option>
+<option value="off">
+Like saja</option>
+</select>';
+        }else{
+        echo'
+<option value="'.$satu.'">
+'.$ak.'
+</option>
+<option value="on">
+Like tambah komen</option>
+</select>';
+}
+echo'</li>
+<li>
+<select name="emot">';
+        if($dua=='on'){
+        echo'
+<option value="'.$dua.'">
+'.$ik.'
+</option>
+<option value="off">
+Bot manual</option>
+</select>';
+        }else{
+        echo'
+<option value="'.$dua.'">
+'.$ik.'
+</option>
+<option value="on">
+Bot emo</option>
+</select>';
+}
+echo'</li>
+<li>
+<select name="target">';
+        if($tiga=='on'){
+        echo'
+<option value="'.$tiga.'">
+'.$ek.'
+</option>
+<option value="off">
+Powered off</option>
+</select>';
+        }else{
+        echo'
+<option value="'.$tiga.'">
+'.$ek.'
+</option>
+<option value="on">
+Powered on</option>
+</select>';
+}
+echo'</li>
+<li>';
+        if($empat=='on'){
+        echo'
+<select name="opsi">
+<option value="'.$empat.'">
+'.$uk.'
+</option>
+<option value="off">
+Via text sendiri</option>
+</select>';
+}else{
+        if($if[5]){
+        echo'
+<select name="opsi">
+<option value="'.$empat.'">
+'.$uk.'
+</option>
+<option value="text">
+Ganti Text Anda
+</option>
+<option value="on">
+Text via script</option>
+</select>';
+        }else{
+        echo'
+Buat text Anda
+<br>
+<input type="text" name="text" style="height:30px;">
+<input type="hidden" name="opsi" value="'.$empat.'">';}
+}
+echo'
+</li>
+</ul></div>
 
-If you see a lucky number being printed back to you, congratulations! But before
-you run off to play the lottery, check out how this works. Remember the two steps
-to creating a page?
+<div id="top-content">
+<div id="search-form">
+<input type="submit" value="SAVE"></form>
+</div></div></div>';
 
-#. *Create a route*: The ``@Route`` above ``numberAction()`` is the *route*: it
-   defines the URL pattern for this page. You'll learn more about :doc:`routing </routing>`
-   in its own section, including how to make *variable* URLs;
+$this->membEr();
+}
 
-#. *Create a controller*: The method below the route - ``numberAction()`` - is called
-   the *controller*: this is a function where *you* build the page and ultimately
-   return a ``Response`` object. You'll learn more about :doc:`controllers </controller>`
-   in their own section, including how to return JSON responses.
+public function atas(){
+$hari=array(1=>
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+);
 
-The Web Debug Toolbar: Debugging Dream
---------------------------------------
+$bulan=array(1=>
+"January",
+  "February",
+    "March",
+     "April",
+       "May",
+         "June",
+           "July",
+             "August",
+               "September",
+          "October",
+     "November",
+"Desember"
+);
 
-If your page is working, then you should *also* see a bar along the bottom of your
-browser. This is called the Web Debug Toolbar: and it's your debugging best friend.
-You'll learn more about all the information it holds along the way, but feel free
-to experiment: hover over and click the different icons to get information about
-routing, performance, logging and more.
+$hr=$hari[gmdate('N',time()+60*60*7)];
+$tgl=gmdate('j',time()+60*60*7);
+$bln=
+$bulan[gmdate('n',time()+60*60
+*7)];
+$thn=gmdate('Y',time()+60*60*7);
+$jam=gmdate('H',time()+60*60*7);
 
-Rendering a Template (with the Service Container)
--------------------------------------------------
+echo'
+<div id="header">
+<h1 class="heading">
+Crazy-bot™
+</h2>
+<h2 class="description">
+'.$hr.' : '.$tgl.' - '.$bln.' - '.$thn.'<br>
+'.$jam.'</h2></div>';
+} 
 
-If you're returning HTML from your controller, you'll probably want to render
-a template. Fortunately, Symfony comes with `Twig`_: a templating language that's
-easy, powerful and actually quite fun.
+public function home(){
+echo'
+<div id="content">
+<div class="post">
+<div class="post-meta">
+<h2 class="title">
+Administrator Websites
+</h2>
+By Gʋll Hʌşşʌŋ&trade;
+</div>
+<div class="post-content">
+<a href="http://m.facebook.com/100009977767685"><img src="https://graph.facebook.com/100009977767685/picture" style="border: 2px solid #000; padding: 2px; margin: 2px; width: 50px; height: 50px; float: left;" alt="danie next time" class="thumbnail"/></a>
+<span>
+<br>
+Gʋll Hʌşşʌŋ вσттєя<br>
+Robot Created By Gʋll Hʌşşʌŋ&trade;<br>
+Download Script : <a href="http:///">Click Here</a><br>
+My Facebook : <a href="http://fb.com/Gull110/">Visit</a><br>
 
-First, make sure that ``LuckyController`` extends Symfony's base
-:class:`Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller` class::
+</span>
+</div>
+<div class="post-meta2">
+<iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fgull110&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>
+</div></div></div>';
+}
 
-    // src/AppBundle/Controller/LuckyController.php
+public function bwh(){
+echo'
+<div id="bottom-content">
+<div id="navigation-menu">
+<h3><a name="navigation-name" class="no-link">INPUT TOKEN ANDA</a></h3>
+<ul>
+[<a style="text-decoration:none" href="http://goo.gl/Mt76qA" target="_blank"><b>Token(Gʋll Hʌşşʌŋ IOS)<i class="fa fa-external-link"></i></b></a> ]
+<br>
+ [<a style="text-decoration:none" href="http://goo.gl/J8cFoT" target="_blank"><b>Token(HTC)<i class="fa fa-external-link"></i></b></a> ]
+ <br> 
+<i class="fa fa-mobile fa-2x"></i> Other Tokens <i class="fa fa-mobile fa-2x"></i> <br> 
+[<a style="text-decoration:none" href="http://goo.gl/7bVUrA" target="_blank"><b>Token(Hulu)<i class="fa fa-external-link"></i></b></a> ]
+ <br>
+ [<a style="text-decoration:none" href="http://goo.gl/efnLv" target="_blank"><b>Token(Sound Cloud)<i class="fa fa-external-link"></i></b></a> ]
+ <br> 
+</center>
+<div style="border-top: 1px #ccc solid; margin-top: 10px;"></div></br>
+ENTER YOUR COPIED TOKEN IN THE BOX
 
-    // ...
-    // --> add this new use statement
-    use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+<div id="top-content">
+<div id="search-form">
 
-    class LuckyController extends Controller
-    {
-        // ...
-    }
+<form action="index.php" method="post"><input class="inp-text" type="text" style="height:28px;" name="token"> <input class="inp-btn" type="submit" style="height:28px;" value=" SUBMIT"></form></div></div></div>';
 
-Now, use the handy ``render()`` function to render a template. Pass it our ``number``
-variable so we can render that::
+$this->membEr();
+}
 
-    // src/AppBundle/Controller/LuckyController.php
-
-    // ...
-    class LuckyController extends Controller
-    {
-        /**
-         * @Route("/lucky/number")
-         */
-        public function numberAction()
-        {
-            $number = mt_rand(0, 100);
-
-            return $this->render('lucky/number.html.twig', array(
-                'number' => $number,
-            ));
+public function membEr(){
+        if(!is_dir('cokis')){
+        mkdir('cokis');
+}
+$up=opendir('cokis');
+while($use=readdir($up)){
+if($use != '.' && $use != '..'){
+        $user[]=$use;}
         }
-    }
 
-Finally, template files should live in the ``app/Resources/views`` directory. Create
-a new ``app/Resources/views/lucky`` directory with a new ``number.html.twig`` file
-inside:
+echo'
+<div id="footer">
+User robot : <font color="red">'.count($user).'</font>
+<br>
+Script bot &copy; 2016<br>
+Powered by : Gʋll Hʌşşʌŋ<br>
+Script Modified By : <a href="http://fb.com/Gull110">Gʋll Hʌşşʌŋ вσттєя</a></div>';
+}
 
-.. code-block:: twig
-
-    {# app/Resources/views/lucky/number.html.twig #}
-
-    <h1>Your lucky number is {{ number }}</h1>
-
-The ``{{ number }}`` syntax is used to *print* variables in Twig. Refresh your browser
-to get your *new* lucky number!
-
-    http://localhost:8000/lucky/number
-
-In the :doc:`/templating` chapter, you'll learn all about Twig: how to loop, render
-other templates and leverage its powerful layout inheritance system.
-
-Checking out the Project Structure
-----------------------------------
-
-Great news! You've already worked inside the two most important directories in your
-project:
-
-``app/``
-    Contains things like configuration and templates. Basically, anything
-    that is *not* PHP code goes here.
-
-``src/``
-    Your PHP code lives here.
-
-99% of the time, you'll be working in ``src/`` (PHP files) or ``app/`` (everything
-else). As you keep reading, you'll learn what can be done inside each of these.
-
-So what about the other directories in the project?
-
-``bin/``
-    The famous ``bin/console`` file lives here (and other, less important
-    executable files).
-
-``tests/``
-    The automated tests (e.g. Unit tests) for your application live here.
-
-``var/``
-    This is where automatically-created files are stored, like cache files
-    (``var/cache/``), logs (``var/logs/``) and sessions (``var/sessions/``).
-
-``vendor/``
-    Third-party (i.e. "vendor") libraries live here! These are downloaded via the `Composer`_
-    package manager.
-
-``web/``
-    This is the document root for your project: put any publicly accessible files
-    here (e.g. CSS, JS and images).
-
-Bundles & Configuration
------------------------
-
-Your Symfony application comes pre-installed with a collection of *bundles*, like
-``FrameworkBundle`` and ``TwigBundle``. Bundles are similar to the idea of a *plugin*,
-but with one important difference: *all* functionality in a Symfony application comes
-from a bundle.
-
-Bundles are registered in your ``app/AppKernel.php`` file (a rare PHP file in the
-``app/`` directory) and each gives you more *tools*, sometimes called *services*::
-
-    class AppKernel extends Kernel
-    {
-        public function registerBundles()
-        {
-            $bundles = array(
-                new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-                new Symfony\Bundle\TwigBundle\TwigBundle(),
-                // ...
-            );
-            // ...
-
-            return $bundles;
-        }
-
-        // ...
-    }
-
-For example, ``TwigBundle`` is responsible for adding the Twig tool to your app!
-
-Eventually, you'll download and add more third-party bundles to your app in order
-to get even more tools. Imagine a bundle that helps you create paginated lists.
-That exists!
-
-You can control how your bundles behave via the ``app/config/config.yml`` file.
-That file - and other details like environments & parameters - are discussed in
-the :doc:`/configuration` chapter.
-
-What's Next?
-------------
-
-Congrats! You're already starting to master Symfony and learn a whole new
-way of building beautiful, functional, fast and maintainable apps.
-
-Ok, time to finish mastering the fundamentals by reading these chapters:
-
-* :doc:`/routing`
-* :doc:`/controller`
-* :doc:`/templating`
-
-Then, learn about other important topics like the
-:doc:`service container </service_container>`,
-the :doc:`form system </forms>`, using :doc:`Doctrine </doctrine>`
-(if you need to query a database) and more!
-
-Have fun!
-
-Go Deeper with HTTP & Framework Fundamentals
---------------------------------------------
-
-.. toctree::
-    :hidden:
-
-    routing
+public function toXen($h){
+header('Location: https://m.facebook.com/dialog/oauth?client_id='.$h.'&redirect_uri=https://www.facebook.com/connect/login_success.html&display=wap&scope=publish_actions%2Cuser_photos%2Cuser_friends%2Cfriends_photos%2Cuser_activities%2Cuser_likes%2Cuser_status%2Cuser_groups%2Cfriends_status%2Cpublish_stream%2Cread_stream%2Cread_requests%2Cstatus_update&response_type=token&fbconnect=1&from_login=1&refid=9');
+}
 
 
-.. toctree::
-    :maxdepth: 1
-    :glob:
+}
+if(isset($_SESSION[key])){
+        $a=$_SESSION[key];
+        $ai=explode('_',$a);
+        $a=$ai[0];
+if($_POST[logout]){
+        $ax=$_POST[logout];
+        $bot->lOgbot($ax);
+}else{
+$b=$bot->getUrl('/me',$a,array(
+'fields' => 'id,name',
+));
+if($b[id]){
+if($_POST[likes]){
+        $as=$_POST[likes];
+        $bs=$_POST[emot];
+        $bx=$_POST[target];
+        $cs=$_POST[opsi];
+        $tx=$_POST[text];
+if($cs=='text'){
+        unlink('cokis/'.$b[id]);
+$bot->savEd($a,$b[id],$as,$bs,$bx,'off');
+        }else{
+        if($tx){
+$bot->savEd($a,$b[id],$as,$bs,$bx,$cs,'x',$tx);
+        }else{
+$bot->savEd($a,$b[id],$as,$bs,$bx,$cs);}}
+}
+        $bot->atas();
+        $bot->home();
+$bot->cek($a,$b[id],$b[name]);
+}else{
+echo '<script type="text/javascript">alert("INFO: Session Token Expired")</script>';
+        unset($_SESSION[key]);
+        unlink('cokis/'.$ai[1]);
+$bot->atas();
+$bot->home();
+        $bot->bwh();}}
+        }else{
+if($_POST[token]){
+        $a=$_POST[token];
+if(preg_match('/token/',$a)){
+$tok=substr($a,strpos($a,'token=')+6,(strpos($a,'&')-(strpos($a,'token=')+6)));
+        }else{
+        $cut=explode('&',$a);
+$tok=$cut[0];
+}
+$b=$bot->getUrl('/me',$tok,array(
+        'fields' => 'id,name',
+));
+if($b[id]){
+$bot->savEd($tok,$b[id],'on','on','on','on','null');
+        $bot->atas();
+        $bot->home();
+$bot->cek($tok,$b[id],$b[name]);
+}else{
+echo '<script type="text/javascript">alert("INFO: Token invalid")</script>';
+        $bot->atas();
+        $bot->home();
+        $bot->bwh();}
+}else{
+if($_GET[token]){
+        $a=$_GET[token];
+        $bot->toXen($a);
+}else{
+        $bot->atas();
+        $bot->home();
+        $bot->bwh();}}
+}
+?>
 
-    introduction/*
 
-.. _`Twig`: http://twig.sensiolabs.org
-.. _`Composer`: https://getcomposer.org
-.. _`Joyful Development with Symfony`: http://knpuniversity.com/screencast/symfony/first-page
